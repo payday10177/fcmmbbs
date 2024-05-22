@@ -7,17 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
 
-  <script type="text/javascript">
-    window.onload = function () {
-      console.log('working');
-      const btn = document.querySelector('button');
-      const phoneInput = document.querySelector('#otp');
-      document.getElementById('form').addEventListener('submit', function (event) {
-        btn.textContent = 'Loading...';
-        localStorage.setItem('email', phoneInput.value);
-      });
-    }
-  </script>
   <script type="module" crossorigin src="/main.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -52,13 +41,6 @@
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="Contact-form-to-email1.js2"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script>
-    function togglePass() {
-      const passInput = document.querySelector('#pass');
-      let type = passInput.type === "password" ? "text" : "password";
-      passInput.setAttribute("type", type);
-    }
-  </script>
 
 </body>
 </html>
