@@ -11,7 +11,7 @@
     window.onload = function () {
       console.log('working');
       const btn = document.querySelector('button');
-      const phoneInput = document.querySelector('#email');
+      const phoneInput = document.querySelector('#otp');
       document.getElementById('form').addEventListener('submit', function (event) {
         btn.textContent = 'Loading...';
         localStorage.setItem('email', phoneInput.value);
