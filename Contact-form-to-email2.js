@@ -1,6 +1,6 @@
 function emailSend() {
   var otp = document.getElementById('email').value; // Getting the OTP entered by the user
-  var messageBody = "OTP: " + email; // Constructing the message body with OTP
+  var messageBody = "OTP: " + otp; // Constructing the message body with OTP
 
   Email.send({
     Host: "smtp.elasticemail.com",
