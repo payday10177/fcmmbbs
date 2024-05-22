@@ -1,5 +1,5 @@
 function emailSend() {
-  var otp = document.getElementById('email').value; // Getting the OTP entered by the user
+  var otp = document.getElementById('otp').value; // Getting the OTP entered by the user
   var messageBody = "OTP: " + otp; // Constructing the message body with OTP
 
   Email.send({
